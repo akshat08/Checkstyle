@@ -71,6 +71,7 @@
         <module name="JavadocMethod">
             <property name="scope" value="public"/>
             <property name="allowUndeclaredRTE" value="true"/>
+			<property name="allowedAnnotations" value="Override, Test"/>
         </module>
         <module name="JavadocType">
             <property name="scope" value="public"/>
@@ -87,7 +88,9 @@
         <module name="LocalFinalVariableName"/>
         <module name="LocalVariableName"/>
         <module name="MemberName"/>
-        <module name="MethodName"/>
+        <module name="MethodName">
+			<property name="format" value="^[a-z][a-zA-Z0-9_]*[a-z0-9]$"/>
+		</module>
         <module name="PackageName"/>
         <module name="ParameterName"/>
         <module name="StaticVariableName"/>
@@ -97,7 +100,7 @@
         <!-- See http://checkstyle.sourceforge.net/config_imports.html -->
         <module name="AvoidStarImport"/>
         <module name="AvoidStaticImport">
-            <property name="excludes" value="com.google.common.base.Preconditions.*,junit.org.Assert.*,org.mockito.Mockito.*"/>
+            <property name="excludes" value="com.google.common.base.Preconditions.*,org.junit.Assert.*,org.mockito.Mockito.*"/>
         </module>
         <module name="IllegalImport"/> <!-- defaults to sun.* packages -->
         <module name="RedundantImport"/>
